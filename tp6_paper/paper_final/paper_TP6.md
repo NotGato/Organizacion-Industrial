@@ -1,135 +1,151 @@
 ::: {custom-style="Title"}
-Masa crítica e interoperabilidad: por qué la regulación, y no la competencia espontánea, sostiene la adopción de billeteras virtuales en Argentina
+Efectos de red, masa crítica y guerra de subsidios: por qué la interoperabilidad regulada superó a la libre competencia en las billeteras virtuales argentinas
 :::
 
 ::: {custom-style="Subtitle"}
 Universidad Argentina de la Empresa (UADE) · Facultad de Ciencias Económicas\
 Organización Industrial (1.4.068) · 2.º cuatrimestre de 2026\
 Trabajo Práctico N.º 6 · Grupo 6: [completar integrantes]\
-Docente: Mg. Fernando Sotero · Octubre de 2026
+Docente: Mg. Fernando Sotero · Noviembre de 2026
 :::
 
-**Resumen.** Las billeteras virtuales compiten en un mercado con efectos de red. Con el modelo de expectativas autocumplidas de Katz y Shapiro (1985), con α = 1 y P = 0,16, se obtienen tres equilibrios: sin adopción (estable), una masa crítica de 20 % (inestable) y una adopción alta de 80 % (estable). El modelo se extiende a un mercado de dos lados (Rochet y Tirole, 2003) y a la competencia entre dos plataformas con distintos grados de interoperabilidad (Crémer, Rey y Tirole, 2000). Sin interoperabilidad el mercado se inclina hacia una sola billetera; con interoperabilidad plena el bienestar es máximo, pero la plataforma dominante la resiste. La secuencia normativa del BCRA desde 2021 y la evolución de los pagos con QR son consistentes con esta hipótesis. **Palabras clave:** efectos de red, masa crítica, mercados de dos lados, interoperabilidad.
+**Resumen.** Mercado Pago y MODO compiten en un mercado con efectos de red, en el que el valor de una billetera depende de cuántos usuarios y comercios la usan. Se pone a prueba la hipótesis de que la libre competencia entre billeteras de acceso gratuito basta para alcanzar la adopción alta y el máximo bienestar. Con el modelo de expectativas autocumplidas (α = 1, P = 0,16) se obtiene una masa crítica de 20 % y un equilibrio alto de 80 %, en el que el consumidor marginal no gana nada con adoptar ni con cambiarse. Sin interoperabilidad, un rival solo capta usuarios con subsidios de hasta 0,8 por usuario, y la competencia degenera en una guerra de subsidios que no amplía la red. La hipótesis se rechaza. Los motivos son conceptuales (efectos de red, precio cero, productos no homogéneos) y regulatorios (figuras distintas ante el BCRA, interoperabilidad impuesta por etapas). **Palabras clave:** efectos de red, masa crítica, interoperabilidad, subsidios, billeteras virtuales.
 
-# 1. Introducción
+# 1. Introducción: masa crítica y un equilibrio bajo para el consumidor
 
-Los pagos con billeteras virtuales, como Mercado Pago y MODO, se expandieron con rapidez en Argentina, pero su adopción no se explica solo por el precio: una billetera vale para un usuario en la medida en que la aceptan los comercios y la usan sus contactos, y vale para un comercio en la medida en que la usan sus clientes. Este efecto de red hace que la adopción dependa de lo que cada uno *espera* que hagan los demás, genera equilibrios múltiples y puede dejar al mercado atrapado en un equilibrio de baja adopción aunque exista otro mejor para todos.
+Una billetera virtual vale para el usuario en la medida en que la aceptan los comercios y la usan sus contactos. Por eso cada consumidor decide según lo que *espera* que hagan los demás. Si nadie espera que se use, nadie la adopta: el mercado queda en un equilibrio bajo aunque exista otro mejor para todos. Para salir de él hace falta superar una **masa crítica** de adoptantes. Una vez superada, el problema cambia: el consumidor queda atado a la red que eligió, porque cambiarse implica perder el valor de esa red. El consumidor marginal, que es el indiferente entre adoptar o no, no tiene nada que ganar.
 
-**Pregunta de investigación.** ¿Por qué un mercado de pagos digitales con efectos de red puede quedar atrapado en un equilibrio de baja adopción, o en la red de la plataforma que llegó primero, y qué mecanismo permite llevarlo al equilibrio de alta adopción y sostenerlo allí?
+En Argentina compiten Mercado Pago, que llegó primero y está integrado al ecosistema de Mercado Libre, y MODO, lanzada en 2020 por un grupo de bancos. Ambas son gratuitas para el usuario, de modo que no pueden competir bajando el precio: compiten con reintegros y promociones. En paralelo, el BCRA impuso por etapas la interoperabilidad de los pagos con QR desde 2021.
 
-**Hipótesis general.** *La adopción de billeteras virtuales es un problema de coordinación con masa crítica, y el mecanismo que permite alcanzar y sostener el equilibrio de alta adopción es la interoperabilidad impuesta por regulación: amplía la red efectiva de cada usuario, reduce la masa crítica y elimina la ventaja de red que lleva a la plataforma dominante a resistir la compatibilidad.*
+**Pregunta de investigación.** ¿Alcanza la libre competencia entre billeteras para llevar al mercado al equilibrio de alta adopción con el máximo bienestar, o fue necesaria la intervención estatal?
 
-**Objetivo general:** explicar la dinámica de adopción de las billeteras virtuales con el modelo de demanda de red y evaluar el papel de la interoperabilidad. **Objetivos específicos:** (i) derivar los equilibrios, su estabilidad y la masa crítica del modelo del enunciado; (ii) evaluar cómo el subsidio, el precio de monopolio, la estructura de precios entre usuarios y comercios y la interoperabilidad modifican la masa crítica; (iii) contrastar las predicciones con la evolución de los pagos con QR en Argentina.
+**Hipótesis general.** *La libre competencia entre billeteras virtuales de acceso gratuito basta, sin intervención estatal, para llevar al mercado al equilibrio de alta adopción con el máximo bienestar.*
 
-El tema es relevante porque los mercados de pagos se concentran con facilidad y su regulación está en discusión en el país. Tras el estado del arte (sección 2) y la metodología (3), se presentan los resultados (4), su contraste con el caso argentino (5) y las conclusiones (6).
+**Objetivo general:** contrastar esta hipótesis con el modelo de demanda de red y con la evidencia argentina. **Objetivos específicos:** (i) calcular la masa crítica y el equilibrio del consumidor; (ii) medir el incentivo del consumidor a cambiarse de billetera y el subsidio que necesita un rival; (iii) comparar el bienestar con y sin interoperabilidad; (iv) identificar los motivos conceptuales y regulatorios por los que el resultado se aparta de la hipótesis.
 
-# 2. Estado del arte
+Tras el estado del arte (sección 2) y la metodología (3), se presentan los cálculos (4), el contraste de la hipótesis (5) y las conclusiones (6).
 
-**Externalidades de red y compatibilidad.** Katz y Shapiro (1985) formalizan la idea de que el beneficio de adoptar un bien crece con el número de adoptantes. Como el consumidor decide antes de saber cuántos adoptarán, introducen el *equilibrio de expectativas autocumplidas* (EEA), en el que las expectativas sobre el tamaño de la red se verifican. Esto genera equilibrios múltiples y un umbral de adopción o masa crítica, que Pepall, Richards y Norman (2006, cap. 22) presentan con la demanda de red p(n) = n(1 − n). Katz y Shapiro muestran además que los incentivos privados y sociales a la compatibilidad divergen: la compatibilidad amplía la red de cada consumidor, pero reduce la ventaja de las firmas con mayor base instalada, que por eso tienden a preferir la incompatibilidad.
+# 2. Estado del arte: efectos de red
 
-**Mercados de dos lados.** Rochet y Tirole (2003) caracterizan a las plataformas que atienden a dos grupos con externalidades cruzadas, como usuarios y comercios. Un mercado es de dos lados cuando la plataforma puede alterar el volumen de transacciones cambiando la *estructura* de precios, es decir, cómo reparte el precio total entre los lados, y no solo su nivel. La regla resultante es cobrar menos, o subsidiar, al lado cuya presencia más valora el otro, como hacen las tarjetas de crédito al bonificar al titular y cobrar al comercio. Así se formaliza el problema del huevo y la gallina.
+**Externalidades de red y expectativas.** Katz y Shapiro (1985) definen la externalidad de red como el beneficio de adoptar un bien que depende positivamente del número de otros adoptantes. En su modelo, la disposición a pagar de cada consumidor es su valoración intrínseca más un valor creciente en el tamaño *esperado* de la red. Los consumidores forman expectativas antes de que las firmas produzcan, y en equilibrio esas expectativas se cumplen (equilibrio de expectativas autocumplidas). Con redes incompatibles pueden existir equilibrios asimétricos, en los que una firma domina solo porque los consumidores esperan que domine. Además, las firmas con grandes redes tienden a oponerse a la compatibilidad aunque aumente el bienestar, y las pequeñas a favorecerla. Pepall, Richards y Norman (2006, cap. 22) presentan la versión de manual que usa este trabajo, con una masa crítica como equilibrio inestable.
 
-**Interconexión.** Crémer, Rey y Tirole (2000) extienden el modelo de Katz y Shapiro a redes que compiten y deciden si interconectarse. La red más grande tiene incentivos a ofrecer a sus rivales una interconexión de peor calidad que la que ofrecería una red pequeña, y el resultado se mantiene aun si los clientes usan varias redes. La compatibilidad, entonces, no surge espontáneamente cuando hay una red dominante.
+**Mercados de dos lados.** Rochet y Tirole (2003) estudian las plataformas que atienden a dos grupos con externalidades cruzadas, como usuarios y comercios. En ellas importa la *estructura* de precios (cómo se reparte el precio total entre los lados), no solo su nivel. La regla es cobrar menos, o subsidiar, al lado cuya presencia más valora el otro. Esto explica por qué las billeteras son gratuitas, e incluso pagan reintegros, para el usuario: el usuario es el lado "difícil", y su presencia es lo que atrae a los comercios.
 
-En conjunto, la literatura predice que los mercados de red tienen umbrales de adopción, que la estructura de precios importa y que la red dominante resiste la compatibilidad. Este trabajo integra los tres aportes en un modelo y los aplica a los pagos con QR en Argentina.
+**Interconexión.** Crémer, Rey y Tirole (2000) extienden el modelo de Katz y Shapiro a redes que compiten y deciden la calidad de su interconexión, γ. Esa calidad la fija la red que menos la valora. La red más grande prefiere una interconexión de peor calidad que la pequeña, y la prefiere peor cuanto mayor es su ventaja de base instalada. El resultado se mantiene si los clientes usan varias redes: el rival pequeño no puede defenderse solo. Como esa calidad es menor que la socialmente óptima, la autoridad debe impedir que la red dominante fragmente el mercado.
+
+Las tres contribuciones apuntan a que un mercado de red librado a sí mismo puede quedar trabado, concentrarse y resistir la compatibilidad. La hipótesis de este trabajo plantea lo contrario, la eficiencia de la libre competencia, para contrastarla con un caso concreto.
 
 # 3. Metodología
 
-Se utiliza el modelo de forma reducida del enunciado. La utilidad de adoptar para el consumidor de tipo θ es
+Se usa el modelo del enunciado. La utilidad de adoptar para el consumidor de tipo θ es
 
 ::: {custom-style="Ecuacion"}
 U = θ · (α · yᵉ) − P,   con θ ~ U[0,1], α = 1 y P = 0,16,
 :::
 
-donde θ es la intensidad de uso, yᵉ el tamaño esperado de la red (fracción de adoptantes), α la intensidad de la externalidad y P el costo efectivo de adopción. Se supone una población normalizada en 1, expectativas autocumplidas en equilibrio (yᵉ = y) y un ajuste gradual de las expectativas fuera de él, que permite evaluar la estabilidad. Cuando una plataforma fija precios, se supone costo marginal nulo.
+donde θ es la intensidad de uso, yᵉ el tamaño esperado de la red, α la intensidad de la externalidad y P el costo efectivo de adopción. Como las billeteras son gratuitas, P se interpreta como un costo no monetario: alta, validación de identidad, aprendizaje, confianza. Para analizar la competencia se agregan dos billeteras, A (incumbente) y B (rival). La utilidad de usar la billetera i es U_i = θ·α·(y_iᵉ + β·y_jᵉ) − P_i, donde β ∈ [0,1] es el grado de interoperabilidad, equivalente a la calidad de interconexión γ de Crémer, Rey y Tirole. El bienestar neto es W(y) = α·y²(2 − y)/2 − P·y.
 
-El análisis combina álgebra de equilibrio, estática comparativa, bienestar y simulación numérica, y se extiende a un modelo de dos lados y a la competencia entre dos billeteras con un grado de interoperabilidad β. La evidencia argentina proviene de comunicaciones e informes del BCRA, y de cifras de empresas y prensa identificadas como tales. Como P = 0,16 es un valor hipotético y la masa crítica no es observable, esa evidencia se usa para contrastar mecanismos de forma cualitativa, no para calibrar el modelo.
+Se calculan equilibrios, estabilidad, incentivos a cambiarse y bienestar. La evidencia argentina proviene de comunicaciones e informes del BCRA, y de cifras de empresas y prensa identificadas como tales. Como P = 0,16 es hipotético, la evidencia se usa para contrastar mecanismos, no para calibrar el modelo.
 
-# 4. Resultados
+# 4. Cálculos: qué tan bajo queda el consumidor
 
-## 4.1 Consumidor marginal, equilibrios y estabilidad
+## 4.1 Masa crítica y equilibrios
 
-El consumidor indiferente cumple U = 0, de modo que
-
-::: {custom-style="Ecuacion"}
-θ* = P / (α · yᵉ) = 0,16 / yᵉ   ⇒   y = 1 − 0,16 / yᵉ si yᵉ > 0,16, e y = 0 en otro caso.
-:::
-
-Si se espera menos de 16 % de adopción, ni el usuario más intensivo adopta. Imponiendo yᵉ = y se obtiene y² − y + P/α = 0:
+El consumidor indiferente cumple U = 0, de modo que θ* = P/(α·yᵉ) = 0,16/yᵉ. La adopción realizada es y = 1 − 0,16/yᵉ; si se espera menos de 16 %, nadie adopta. Con expectativas autocumplidas (yᵉ = y):
 
 ::: {custom-style="Ecuacion"}
-y = [1 ± √(1 − 4P/α)] / 2 = (1 ± 0,6) / 2   ⇒   y_L = 0,2  y  y_H = 0,8,
+y² − y + P/α = 0   ⇒   y = [1 ± √(1 − 4P/α)] / 2 = (1 ± 0,6) / 2   ⇒   y_L = 0,2  y  y_H = 0,8.
 :::
 
-además del equilibrio sin adopción, y = 0. Un equilibrio es estable si la pendiente de la función de respuesta f(y) = 1 − P/(α·y) es menor que 1: f′(0,2) = 4 (inestable) y f′(0,8) = 0,25 (estable). El equilibrio intermedio es la **masa crítica**: si la adopción esperada supera 20 %, la red crece sola hasta 80 %; si no, colapsa a cero (Gráfico 1). La no adopción es una trampa de coordinación: nadie quiere ser el primero.
+Junto con y = 0 hay tres equilibrios. La pendiente de la respuesta f(y) = 1 − P/(α·y) vale 4 en 0,2, que es por lo tanto inestable, y 0,25 en 0,8, que es estable (Gráfico 1). La masa crítica es 20 %: por debajo la red colapsa, y por encima crece sola hasta 80 %.
 
-![Gráfico 1. Función de respuesta frente a la diagonal: equilibrios y masa crítica. Elaboración propia, P = 0,16, α = 1.](grafico1_equilibrios.png){width=9cm}
+![Gráfico 1. Función de respuesta frente a la diagonal: equilibrios y masa crítica. Elaboración propia, P = 0,16, α = 1.](grafico1_equilibrios.png){width=7.5cm}
 
-## 4.2 Qué mueve la masa crítica
+## 4.2 El consumidor marginal y el incentivo a cambiarse
 
-La masa crítica es y_L = [1 − √(1 − 4P/α)] / 2: crece con P y cae con α. La Tabla 1 compara cuatro escenarios.
+En el equilibrio alto adoptan los θ ≥ 0,2. El consumidor marginal (θ* = 0,2) obtiene U = 0,2 · 0,8 − 0,16 = 0: no gana nada con estar en la red. Los inframarginales sí ganan: el excedente total de los usuarios es 0,256.
 
-: Tabla 1. Masa crítica y equilibrio alto según el escenario. Elaboración propia.
+Si A tiene y_A = 0,8 y nadie espera usuarios en B, el usuario θ solo se cambia si B le ofrece un subsidio que cubra el valor de red que pierde:
 
-| Escenario | P | α | Masa crítica | Equilibrio alto |
+::: {custom-style="Ecuacion"}
+s(θ) = θ · α · (1 − β) · (y_A − y_Bᵉ) = 0,8 · θ · (1 − β).
+:::
+
+: Tabla 1. Subsidio que necesita B para que se cambie cada tipo de usuario. Elaboración propia.
+
+| Interoperabilidad | Marginal (θ = 0,2) | Promedio (θ = 0,6) | Más intensivo (θ = 1) | Costo total, subsidio uniforme |
 |---|---|---|---|---|
-| Base | 0,16 | 1 | 20 % | 80 % |
-| Subsidio temporal de 0,07 | 0,09 | 1 | 10 % | 90 % |
-| Interoperabilidad (red efectiva mayor) | 0,16 | 1,5 | 12,1 % | 87,9 % |
-| Precio de monopolio | 2/9 | 1 | 33,3 % | 66,7 % |
+| β = 0 | 0,16 | 0,48 | 0,80 | 0,64 |
+| β = 0,5 | 0,08 | 0,24 | 0,40 | 0,32 |
+| β = 1 | 0 | 0 | 0 | 0 |
 
-El **subsidio** baja P y sirve para cruzar el umbral; una vez superado, puede retirarse y la red sigue creciendo. La **interoperabilidad** actúa como un aumento de α, porque cada usuario accede a más comercios y usuarios aunque su billetera sea chica, y su efecto es permanente. El **monopolio** va en sentido contrario: una plataforma que maximiza π = P · y_H(P) elige P = 2/9, con y_H = 2/3 y π = 4/27 ≈ 0,148 (frente a 0,128 con P = 0,16), pero eleva la masa crítica a 1/3. Ese dilema explica los precios de penetración.
+Sin interoperabilidad, para captar siquiera al consumidor marginal B debe cubrir todo su costo de adopción (0,16). Para captar a los demás debe pagar más, cuanto más intensivo es el usuario (Gráfico 2). Los usuarios que más valor aportan son los más difíciles de mover: **el incentivo a cambiarse es nulo sin subsidios**. Con interoperabilidad plena el valor de red ya no depende de la billetera, y el subsidio necesario desaparece.
 
-En términos de bienestar, W(y) = y²(2 − y)/2. Como el usuario marginal no internaliza el beneficio que su adopción genera en los demás, el mercado adopta menos que el óptimo social (y = 1, W = 0,5). Con el precio de monopolio, W = 8/27 ≈ 0,296: se pierde el 40,7 % del bienestar máximo.
+![Gráfico 2. Subsidio necesario para que cada usuario se cambie de billetera. Elaboración propia, y_A = 0,8, α = 1.](grafico2_subsidio_cambio.png){width=7.5cm}
 
-## 4.3 Extensión bilateral: usuarios y comercios
+## 4.3 La guerra de subsidios
 
-Se separan usuarios (θ) y comercios (φ), ambos uniformes en [0,1], y cada lado valora el tamaño esperado del otro: U = θ·α_u·mᵉ − P_u y V = φ·α_c·yᵉ − P_c, donde m es la fracción de comercios. Con a = P_u/α_u y b = P_c/α_c, los equilibrios cumplen
+Como las billeteras son gratuitas, el precio al usuario ya es cero y no puede bajar más: la competencia se traslada a los subsidios (reintegros, promociones, beneficios). Captar a todos los usuarios de A con un subsidio uniforme cuesta 0,8 × 0,8 = 0,64. Aun discriminando por tipo costaría 0,384, todo el valor bruto de la red. Ese gasto no crea red: si B tuviera éxito, el resultado sería el mismo equilibrio de 80 % con otro dueño. Además, sin interoperabilidad dos billeteras no pueden repartirse el mercado. Un reparto simétrico exige 2y² − y + P/[α(1 + β)] = 0, que con P = 0,16 solo tiene solución si β ≥ 0,28. Con redes incompatibles, la mitad del mercado no alcanza para sostener una red, y el mercado se inclina hacia una sola billetera.
 
-::: {custom-style="Ecuacion"}
-y² − (1 + b − a) · y + b = 0,   m = 1 − b/y,
-:::
+## 4.4 Bienestar con y sin intervención
 
-y son estables si √(a·b) < y·m. Con lados simétricos (P_u = P_c = 0,16, α_u = α_c = 1) se recuperan los equilibrios (0; 0), (0,2; 0,2) y (0,8; 0,8): **el modelo del enunciado es el caso simétrico del bilateral**. La masa crítica pasa a ser una frontera en el plano usuarios-comercios (Gráfico 2). Alcanza con 20 % de cada lado, pero si se parte sin comercios hacen falta alrededor de 37,5 % de usuarios.
+La interoperabilidad amplía la red de cada usuario (puede pagar en más comercios aunque su billetera sea chica), lo que en el modelo equivale a un aumento de α.
 
-![Gráfico 2. Diagrama de fases del modelo bilateral: el huevo y la gallina. Elaboración propia, P_u = P_c = 0,16, α_u = α_c = 1.](grafico2_bilateral.png){width=8.5cm}
+: Tabla 2. Masa crítica, adopción y bienestar según el escenario. Elaboración propia, P = 0,16.
 
-La estructura de precios importa. Con el mismo precio total (0,32), pasar de cobrar 0,16 a cada lado a cobrar todo a los comercios eleva el volumen de transacciones y·m de 0,64 a 0,68. Si los comercios valoran más a los usuarios que al revés (α_c = 2, α_u = 1), la plataforma monopolista cobra P_u = 0 y P_c = 1, con y = 1 y m = 0,5. Es la regla de Rochet y Tirole (2003): la billetera es gratuita para el usuario y el comercio paga la comisión.
+| Escenario | Masa crítica | Adopción | Bienestar W | % del óptimo con ese α |
+|---|---|---|---|---|
+| Sin intervención, trampa | — | 0 | 0 | 0 % |
+| Sin intervención, equilibrio alto (α = 1) | 20 % | 80 % | 0,256 | 75,3 % |
+| Interoperabilidad parcial (α = 1,25) | 15,1 % | 84,9 % | 0,383 | 82,3 % |
+| Interoperabilidad plena (α = 1,5) | 12,1 % | 87,9 % | 0,509 | 86,2 % |
 
-## 4.4 Competencia entre dos billeteras e interoperabilidad
+Con interoperabilidad la masa crítica baja, la adopción sube y el bienestar casi se duplica (de 0,256 a 0,509). En todos los casos queda una brecha con el óptimo: el consumidor marginal no internaliza el beneficio que su adopción genera en los demás, así que hay sub-adopción.
 
-Sean dos billeteras, A (incumbente) y B (rival), y consumidores que usan una sola. La utilidad de la billetera i es U_i = θ·α·(y_iᵉ + β·y_jᵉ) − P_i, donde β ∈ [0,1] es el grado de interoperabilidad. La ventaja de A sobre B es
+# 5. Contraste de la hipótesis: por qué no se cumple
 
-::: {custom-style="Ecuacion"}
-U_A − U_B = θ · α · (1 − β) · (y_Aᵉ − y_Bᵉ) − (P_A − P_B).
-:::
+## 5.1 Resultado
 
-De aquí surgen tres resultados. **Primero, sin interoperabilidad el mercado se inclina hacia una sola billetera.** En un reparto simétrico cada red cumple 2y² − y + P/[α(1 + β)] = 0, que con P = 0,16 solo tiene solución si β ≥ 0,28: con redes incompatibles, la mitad del mercado no alcanza para sostener una red. **Segundo, entrar contra un incumbente exige subsidios.** Si A tiene y_A = 0,8 y nadie espera usuarios en B, el usuario más intensivo se pasa a B solo si P_B ≤ 0,16 − 0,8·α·(1 − β). Con β = 0, B debe *pagar* 0,64 por usuario; con β = 1, le basta igualar el precio (Gráfico 3). **Tercero, con interoperabilidad plena la competencia es en precios.** La red es común y las billeteras compiten à la Bertrand hasta el costo marginal: P = 0, y = 1 y W = 0,5, frente a W ≈ 0,296 con una billetera dominante que cobra 2/9. Como el beneficio de la dominante cae de 0,148 a 0, la red grande resiste la interoperabilidad, tal como predicen Crémer, Rey y Tirole (2000).
+La hipótesis se rechaza por tres motivos que surgen de los cálculos. Primero, la libre competencia no garantiza salir de la trampa: si la adopción esperada no supera 20 %, el mercado se queda en cero. Segundo, aun en el equilibrio alto hay sub-adopción, porque el consumidor marginal no gana nada y no internaliza la externalidad. Tercero, la competencia no disciplina al incumbente: sin interoperabilidad los usuarios no se cambian, el rival solo puede pagar subsidios que no crean red y el mercado no puede repartirse.
 
-![Gráfico 3. Precio máximo que puede cobrar un entrante según el grado de interoperabilidad. Elaboración propia, y_A = 0,8, P_A = 0,16, α = 1.](grafico3_interoperabilidad.png){width=8.5cm}
+## 5.2 Razones conceptuales
 
-# 5. Contraste con el caso argentino
+**Efectos de red y *lock-in*.** El valor está en la red, no en el producto. El usuario que se cambia pierde el valor de su red, y por eso el incentivo a migrar es nulo sin subsidios (Tabla 1). Es el resultado de Katz y Shapiro (1985): una firma puede dominar porque los consumidores esperan que domine.
 
-En Argentina la interoperabilidad de los pagos con QR no surgió de la competencia, sino de una secuencia de decisiones del BCRA (Tabla 2).
+**Ingreso gratuito y guerra de subsidios.** Como el precio al usuario es cero, la regla de Rochet y Tirole (2003) se lleva al extremo: el lado de los usuarios se subsidia y se recauda del otro lado o de otros servicios. Las promociones y reintegros de los bancos a través de MODO y el ecosistema de crédito e inversiones de Mercado Pago son formas de ese subsidio (MODO, s.f.-b; Mercado Libre, 2026).
 
-: Tabla 2. Secuencia normativa de la interoperabilidad de pagos con QR. Elaboración propia con base en BCRA (2021, 2022, 2023, 2024).
+**Productos no homogéneos.** La hipótesis supone, implícitamente, que las billeteras son sustitutos que compiten como en un Bertrand con producto homogéneo. No lo son. Mercado Pago opera con cuentas de pago propias, integradas a un *marketplace*, crédito e inversiones. MODO se usa desde la aplicación de cada banco y paga con las cuentas y tarjetas bancarias del usuario (MODO, s.f.-a). Con productos diferenciados, la competencia en precios no lleva al resultado eficiente, y aun con interoperabilidad las billeteras no son sustitutos perfectos.
+
+## 5.3 Razones burocráticas y regulatorias
+
+**Figuras regulatorias distintas.** El BCRA distingue al proveedor de servicios de pago que ofrece cuentas de pago (PSPCP) del que solo inicia pagos sin proveer cuentas (PSI) (BCRA, s.f.). Mercado Pago ofrece cuentas de pago propias. MODO es un producto de Play Digital S.A., constituida en 2020 por BBVA, Galicia y Santander, cuyo objeto social excluye la actividad financiera (Boletín Oficial, 2020); su operatoria se asemeja a la iniciación de pagos. La categoría exacta de cada una debe confirmarse en el Registro del BCRA. Lo relevante es que operan bajo reglas y nombres distintos, lo que refuerza que no son productos homogéneos.
+
+**Interoperabilidad impuesta por etapas.** La compatibilidad no surgió del mercado: se impuso norma por norma (Tabla 3), con postergaciones.
+
+: Tabla 3. Secuencia normativa de la interoperabilidad de pagos con QR. Elaboración propia con base en BCRA (2021, 2022, 2023, 2024).
 
 | Fecha | Norma | Contenido |
 |---|---|---|
-| Nov. 2021 | Transferencias 3.0 (Com. A 7175) | QR interoperable para pagos con transferencia entre billeteras y cuentas bancarias |
-| Feb. 2022 | Com. A 7462 | Registro de billeteras interoperables; un comercio no puede cobrar con un QR que no lean todas las billeteras inscriptas |
-| May. 2023 – abr. 2024 | Com. A 7769 y prórrogas | Pago con tarjeta de crédito desde cualquier billetera, sin diferencias de comisión ni de plazo; vigente desde el 30/4/2024 tras dos postergaciones |
+| Nov. 2021 | Transferencias 3.0 (Com. A 7175) | QR interoperable para pagos con transferencia |
+| Feb. 2022 | Com. A 7462 | Registro de billeteras; todo QR debe poder leerse por todas las billeteras inscriptas |
+| May. 2023 – abr. 2024 | Com. A 7769 y prórrogas | Pago con crédito desde cualquier billetera, sin diferencias de comisión ni de plazo; postergada dos veces |
 | May. 2024 | Com. A 8032 | Toda billetera debe leer cualquier QR; tope de 0,07 % a la comisión entre billetera y emisora |
 
-La evidencia es consistente con las tres predicciones del modelo. **La adopción despega cuando aumenta la red efectiva:** los pagos con transferencia iniciados con QR pasaron de unas 46.800 operaciones diarias en enero de 2022 a unas 253.000 un año después (BCRA, 2023), y en agosto de 2026 hubo 118,3 millones de pagos con transferencia, 65,6 % más que un año antes, el 99,1 % iniciados con QR (BCRA, 2026b). Es la trayectoria esperada de un mercado que supera la masa crítica. **Los segmentos que se abrieron más tarde siguen por debajo del umbral:** el QR interoperable con tarjeta de crédito, vigente desde 2024, era en julio de 2026 apenas el 4,6 % de las operaciones con crédito (BCRA, 2026a), aunque también pueden influir el hábito o las promociones por tarjeta. **La plataforma dominante resistió la compatibilidad:** la interoperabilidad con crédito se postergó dos veces y, según la prensa, Mercado Pago resistió abrir su QR (Ámbito, 2024). En mayo de 2024 MODO y los bancos denunciaron a Mercado Pago ante la Comisión Nacional de Defensa de la Competencia por abuso de posición dominante, y en agosto Mercado Libre denunció a los bancos de MODO por presunta cartelización (El Cronista, 2024a, 2024b). Sin resolución pública, son alegaciones de parte, pero ilustran la predicción de Crémer, Rey y Tirole (2000). Como no hay una medición oficial de participación por billetera (las cifras son declaradas por las empresas; Mercado Libre, 2026), esta evidencia muestra asociaciones, no relaciones causales.
+**Interconexión asimétrica.** Según la prensa, antes de la A 8032 desde Mercado Pago se podía pagar con crédito leyendo QR de otras billeteras, pero desde MODO un QR de Mercado Pago solo admitía débito (El Cronista, 2024a). Sería una interconexión parcial y asimétrica (γ < 1), como predicen Crémer, Rey y Tirole (2000). No hay verificación independiente de ese hecho.
+
+**Conflicto sin resolver.** En 2024 MODO y los bancos denunciaron a Mercado Pago ante la Comisión Nacional de Defensa de la Competencia por abuso de posición dominante, y Mercado Libre denunció a los bancos de MODO por presunta cartelización (El Cronista, 2024b, 2024c). No hay resolución pública.
+
+## 5.4 El papel de la intervención estatal
+
+La regulación funcionó como un piso a la calidad de interconexión: obligó a que todo QR pueda leerse desde cualquier billetera y prohibió diferencias de comisión y plazo según la billetera. La evidencia es consistente con el modelo. Los pagos con transferencia iniciados con QR pasaron de unas 46.800 operaciones diarias en enero de 2022 a unas 253.000 un año después (BCRA, 2023). En agosto de 2026 hubo 118,3 millones de pagos con transferencia, 65,6 % más que un año antes, y el 99,1 % se inició con QR (BCRA, 2026b). En cambio, el QR con tarjeta de crédito, interoperable recién desde 2024, era en julio de 2026 el 4,6 % de las operaciones con crédito (BCRA, 2026a): es lo esperable en un segmento que todavía no superó su masa crítica. Son asociaciones, no relaciones causales.
 
 # 6. Conclusiones
 
-El trabajo se preguntó por qué un mercado de pagos digitales puede quedar atrapado en un equilibrio de baja adopción y qué permite salir de él. Con P = 0,16 y α = 1 coexisten un equilibrio sin adopción y uno de 80 %, separados por una masa crítica de 20 %. En un mercado de dos lados esa masa crítica debe alcanzarse en ambos lados y la estructura de precios importa; entre plataformas competidoras, la falta de interoperabilidad inclina el mercado hacia una sola billetera y obliga a los entrantes a subsidiar fuertemente.
+El trabajo contrastó la hipótesis de que la libre competencia entre billeteras gratuitas basta para alcanzar la adopción alta y el máximo bienestar. Los cálculos muestran que el mercado necesita superar una masa crítica de 20 % y que, una vez en el equilibrio alto de 80 %, el consumidor marginal no gana nada con estar ni con cambiarse. Sin interoperabilidad, un rival solo capta usuarios con subsidios de hasta 0,8 por usuario, y el mercado no puede repartirse entre dos billeteras.
 
-La hipótesis general no se rechaza. La interoperabilidad es el único instrumento analizado que reduce la masa crítica de forma permanente, elimina la ventaja de red del incumbente y lleva el bienestar a su máximo; a la vez, es justamente lo que la plataforma dominante no elegiría por sí misma. La experiencia argentina, en la que el BCRA debió imponer y extender la interoperabilidad mientras los pagos con QR crecían con fuerza, es consistente con esa conclusión.
+La hipótesis se rechaza. Los motivos son conceptuales: los efectos de red atan al consumidor, el precio cero traslada la competencia a una guerra de subsidios que no crea red y las billeteras no son productos homogéneos. Y son también regulatorios: las billeteras operan bajo figuras distintas, la interoperabilidad se impuso por etapas y con postergaciones, y el conflicto entre las partes sigue abierto. En este caso, la intervención del BCRA, al fijar un piso a la interoperabilidad, bajó la masa crítica y elevó el bienestar en el modelo de 0,256 a 0,509. La libre competencia, por sí sola, no lo habría logrado.
 
-Las principales limitaciones son que P = 0,16 es un valor hipotético, que la masa crítica no es observable, que el modelo supone que cada usuario usa una sola billetera y que la competencia à la Bertrand es un caso extremo, porque las billeteras se diferencian por sus servicios. Como trabajo futuro se propone estimar el efecto de cada comunicación del BCRA sobre la adopción con un diseño de diferencias en diferencias por segmento de pago, y calibrar α y P con encuestas de uso.
+Las limitaciones son que P = 0,16 es hipotético, que la masa crítica no es observable, que el modelo supone un solo lado y una billetera por usuario, y que no hay datos oficiales de participación por billetera. Como trabajo futuro se propone estimar el efecto de cada comunicación del BCRA con un diseño de diferencias en diferencias.
 
 # Bibliografía
 
@@ -141,26 +157,22 @@ KATZ, M. L., SHAPIRO, C., (1985). "Network externalities, competition, and compa
 
 ROCHET, J.-C., TIROLE, J., (2003). "Platform competition in two-sided markets", *Journal of the European Economic Association*, Vol. 1, N°4, pp. 990-1029.
 
-**Libro y material de cátedra**
+**Libro de la cátedra**
 
-PEPALL, L., RICHARDS, D. J., NORMAN, G., (2006). "Organización industrial: teoría y práctica contemporáneas", cap. 22, Thomson. [Verificar edición según el programa.]
-
-UADE (2026). "Organización Industrial, Unidad 9: Economías de red", material de estudio, docente F. Sotero.
+PEPALL, L., RICHARDS, D. J., NORMAN, G., (2006). "Organización industrial: teoría y práctica contemporáneas", cap. 22, Thomson. [Verificar edición.]
 
 **Fuentes documentales del caso argentino**
 
-ÁMBITO (31/5/2024). "Mercado Pago vs bancos: el BCRA dispuso la interoperabilidad de los pagos con QR". www.ambito.com
+BCRA (s.f.). *Glosario de Pagos Minoristas*; (2021). "Interoperability between electronic wallets and acceptors was successful in 3.0 Transfers launch", 29/11/2021. www.bcra.gob.ar
 
-BCRA (2021). "Interoperability between electronic wallets and acceptors was successful in 3.0 Transfers launch", 29/11/2021. www.bcra.gob.ar
-
-BCRA (2022). Comunicación "A" 7462, 24/2/2022. www.bcra.gob.ar/pdfs/comytexord/A7462.pdf
-
-BCRA (2023). "Uno de cada cuatro pagos con transferencia se inicia a través del código QR", 18/2/2023; y Comunicación "A" 7769, 18/5/2023. www.bcra.gob.ar
-
-BCRA (2024). Comunicación "A" 8032, 30/5/2024. www.bcra.gob.ar/archivos/Pdfs/comytexord/A8032.pdf
+BCRA (2022, 2023, 2024). Comunicaciones "A" 7462 (24/2/2022), 7769 (18/5/2023) y 8032 (30/5/2024); y "Uno de cada cuatro pagos con transferencia se inicia a través del código QR" (18/2/2023). www.bcra.gob.ar
 
 BCRA (2026a, 2026b). *Informe Mensual de Pagos Minoristas*, julio y agosto de 2026. www.bcra.gob.ar
 
-EL CRONISTA (2024a, 29/5/2024). "Mercado Pago y MODO firmaron un acuerdo para poder usar tarjetas con los QR"; (2024b, 26/8/2024). "Mercado Pago vs. MODO: la denuncia que sacude al ecosistema de pagos digitales". www.cronista.com
+BOLETÍN OFICIAL (1/6/2020). Play Digital S.A., constitución (Escritura N° 108 del 26/5/2020). www.boletinoficial.gob.ar
 
-MERCADO LIBRE (2026). *Second Quarter 2026 Financial Results* (cifras declaradas por la empresa). news.mercadolibre.com
+EL CRONISTA (2024a, 7/5/2024). "También firmas que instrumentan pagos piden que se abra el mercado de tarjetas de crédito y QR"; (2024b, 29/5/2024). "Mercado Pago y MODO firmaron un acuerdo para poder usar tarjetas con los QR"; (2024c, 26/8/2024). "Mercado Pago vs. MODO: la denuncia que sacude al ecosistema de pagos digitales". www.cronista.com
+
+MERCADO LIBRE (2026). *Second Quarter 2026 Financial Results*. news.mercadolibre.com
+
+MODO (s.f.-a). "Qué es MODO"; (s.f.-b). "Promociones con MODO" (sitio de la empresa). www.modo.com.ar
